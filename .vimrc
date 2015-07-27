@@ -2,8 +2,9 @@
 " vimrc file inspired from
 "https://github.com/Houdini/my_vim_files/blob/master/vimrc
 
-" pathogen to manage bundles plugins and scripts
-set nocompatible  " viMproved
+"Use Vim settings, rather then Vi settings (much better!).
+"This must be first, because it changes other options as a side effect.
+set nocompatible
 filetype off
 
 """ VUNDLE Start
@@ -21,17 +22,13 @@ if has("win32")
 endif
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
+Plugin 'gmarik/Vundle.vim' "required
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-
 Plugin 'Valloric/YouCompleteMe'
-
 Plugin 'bling/vim-airline'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,12 +46,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 """ VUNDLE end
-
-
-
-"Use Vim settings, rather then Vi settings (much better!).
-"This must be first, because it changes other options as a side effect.
-set nocompatible
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
