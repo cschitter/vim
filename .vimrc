@@ -3,19 +3,22 @@
 "https://github.com/Houdini/my_vim_files/blob/master/vimrc
 
 " pathogen to manage bundles plugins and scripts
-filetype on
+set nocompatible  " viMproved
 filetype off
-"call pathogen#helptags()
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#infect()
 
 """ VUNDLE Start
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+if has("win32")
+    set rtp+=$VIM/bundle/Vundle.vim
+elseif has("unix")
+    set rtp+=~/.vim/bundle/Vundle.vim
+endif
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+if has("win32")
+    call vundle#begin('$VIM/bundle')
+endif
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -25,7 +28,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'bling/vim-airline'
 
