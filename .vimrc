@@ -25,11 +25,11 @@ endif
 Plugin 'gmarik/Vundle.vim' "required
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-"Plugin 'Valloric/YouCompleteMe' " requires python and plugin compile
+Plugin 'Valloric/YouCompleteMe' " requires python and plugin compile
 "Plugin 'Shougo/neocomplete.vim' " requires lua
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'bling/vim-airline'
 Plugin 'fholgado/minibufexpl.vim'
 
@@ -255,17 +255,20 @@ if has("gui_running")
     set guioptions-=L
     set guioptions-=r
 
+    colorscheme claude
+    set guifont=Monospace\ 9
     if has("gui_gnome")
         "set term=gnome-256color
         colorscheme claude
         set guifont=Monospace\ 9
     endif
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Menlo:h12
-        set transparency=7
-    endif
+        colorscheme claude
+        set guifont=Monospace\ 9
+     endif
     if has("gui_win32") || has("gui_win32s")
-        set guifont=Consolas:h12
+        colorscheme claude
+        set guifont=Monospace\ 9
         set enc=utf-8
     endif
 else
@@ -410,26 +413,26 @@ inoremap <Esc>D <left>
 
 " syntastic
 "let g:syntastic_debug = 1
-let g:syntastic_disabled_filetypes=['html']
-let g:syntastic_enable_signs=1
-let g:syntastic_error_symbol=">>"
-let g:syntastic_warning_symbol=">>"
-"let g:syntastic_error_symbol='✗'
-"let g:syntastic_warning_symbol='⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_loc_list_height=8
+"let g:syntastic_disabled_filetypes=['html']
+"let g:syntastic_enable_signs=1
+"let g:syntastic_error_symbol=">>"
+"let g:syntastic_warning_symbol=">>"
+""let g:syntastic_error_symbol='✗'
+""let g:syntastic_warning_symbol='⚠'
+"let g:syntastic_auto_loc_list=1
+"let g:syntastic_always_populate_loc_list=1
+"let g:syntastic_loc_list_height=8
 
-let g:syntastic_python_checkers=['pylint']
-let g:syntastic_python_checker_args='--ignore=E501,E225'
-let g:syntastic_python_pylint_args="--const-rgx='[a-z_][a-zA-Z0-9_]{0,30}$'"
-let g:syntastic_python_pylint_args="--rcfile=~/.pylintrc -f parseable -r n -i y "
-let g:syntastic_mode_map = { 'mode': 'passive',
-                               \ 'active_filetypes': ['ruby', 'php'],
-                               \ 'passive_filetypes': ['puppet'] }
-let g:syntastic_check_on_wq=0
-nmap <F7> :SyntasticToggleMode<CR>
-nmap <C-F7> :SyntasticCheck<CR>
+"let g:syntastic_python_checkers=['pylint']
+"let g:syntastic_python_checker_args='--ignore=E501,E225'
+"let g:syntastic_python_pylint_args="--const-rgx='[a-z_][a-zA-Z0-9_]{0,30}$'"
+"let g:syntastic_python_pylint_args="--rcfile=~/.pylintrc -f parseable -r n -i y "
+"let g:syntastic_mode_map = { 'mode': 'passive',
+                               "\ 'active_filetypes': ['ruby', 'php'],
+                               "\ 'passive_filetypes': ['puppet'] }
+"let g:syntastic_check_on_wq=0
+"nmap <F7> :SyntasticToggleMode<CR>
+"nmap <C-F7> :SyntasticCheck<CR>
 
 
  "MiniBufExplorer
@@ -511,11 +514,6 @@ set wildchar=<TAB>
 
 "set cpoptions+=$
 
-" Enable syntax-highlighting.
-if has("syntax")
-  syntax on
-endif
-
 set tags=~/tags,tags
 set mouse=ar
 set makeprg=make
@@ -558,3 +556,8 @@ filetype plugin on
 inoremap jj <ESC>
 inoremap kk <ESC>
 
+" copy/paste from clipboard
+vmap <Leader>x "+x
+vmap <Leader>c "+y
+vmap <Leader>v "+gP
+nmap <Leader>v "+gP
