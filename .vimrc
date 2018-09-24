@@ -6,10 +6,15 @@
 set nocompatible
 filetype off
 
-""" VUNDLE Start
+"if has('win32') || has('win64')
+"    set runtimepath=path/to/home.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,path/to/home.vim/after
+"endif
+
+"" VUNDLE Start
 
 if has("win32")     " set the runtime path to include Vundle and initialize {{{
-    set rtp+=$VIM/bundle/Vundle.vim
+    "set rtp+=$VIM/bundle/Vundle.vim
+    set rtp+=~/Documents/Vim/bundle/Vundle.vim
 elseif has("unix")
     set rtp+=~/.vim/bundle/Vundle.vim
 endif
@@ -117,7 +122,7 @@ set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
-set listchars=tab:▸\ ,eol:¬,extends:>,precedes:<   "display tabs and trailing spaces
+"set listchars=tab:▸\ ,eol:¬,extends:>,precedes:<   "display tabs and trailing spaces
 
 set nolist
 
