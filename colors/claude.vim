@@ -81,7 +81,7 @@ hi NonText		ctermfg=241		cterm=NONE		guifg=#505050	guibg=NONE	gui=NONE
 
 " Vim >= 7.0 specific colors
 if version >= 700
-hi CursorLine					ctermbg=236		cterm=bold		guibg=NONE		guibg=#282828	gui=NONE
+hi CursorLine					ctermbg=236		cterm=NONE		guibg=NONE		guibg=#282828	gui=NONE
 hi MatchParen	ctermfg=228		ctermbg=101		cterm=bold		guifg=#eae788	guibg=#857b6f	gui=bold
 hi Pmenu		ctermfg=230		ctermbg=238		cterm=bold		guifg=#ffffd7	guibg=#444444	gui=NONE
 hi PmenuSel		ctermfg=232		ctermbg=192		cterm=bold		guifg=#080808	guibg=#cae982	gui=NONE
@@ -127,7 +127,7 @@ hi Function		ctermfg=192		cterm=NONE		guifg=#cae982	gui=NONE
 hi Identifier	ctermfg=192		cterm=NONE		guifg=#cae982	gui=NONE
 hi Type			ctermfg=186		cterm=NONE		guifg=#d4d987	gui=NONE
 hi Special		ctermfg=229		cterm=NONE		guifg=#eadead	gui=NONE
-hi Comment		ctermfg=00875f	cterm=bold		guifg=#95e454	gui=italic
+hi Comment		ctermfg=00875f	cterm=italic   	guifg=#95e454	gui=italic
 hi String		ctermfg=244		cterm=NONE		guifg=#9c998e	gui=NONE
 hi Todo			ctermfg=101		cterm=NONE		guifg=#857b6f	gui=italic
 
